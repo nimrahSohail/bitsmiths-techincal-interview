@@ -33,14 +33,12 @@ We cast the imported data using literal types:
 
 ```tsx
 import Table, { Issue } from "./components/table";
-import issuesData from "./constants/issues.json";
-
-// ✅ Ensures JSON literal values match strict union types ("open" | "resolved")
-const typedIssues = issuesData as Issue[];
+import IssuesData from "./constants/issues.json";
 
 export default function Home() {
-  return <Table issues={typedIssues} />;
+  return <Table issues={IssuesData as Issue[]} />;
 }
+
 ```
 
 ---
@@ -92,5 +90,5 @@ The JSON was structurally valid, but formatting consistency improves maintainabi
 ---
 
 **Author:** Nimrah Sohail
-**Task:** Frontend Refactor — GitHub Repository Explorer
+**Task:** Refactor 
 **Focus:** Clean architecture, strong TypeScript typing, and maintainable React logic.
